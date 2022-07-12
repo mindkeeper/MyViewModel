@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvLength"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/length"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtLength"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint"
+        android:inputType="numberDecimal"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="@id/tvLength"
+        app:layout_constraintStart_toStartOf="@id/tvLength"
+        app:layout_constraintTop_toBottomOf="@id/tvLength" />
+
+    <TextView
+        android:id="@+id/tvHeight"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:text="@string/height"
+        app:layout_constraintEnd_toEndOf="@id/edtLength"
+        app:layout_constraintStart_toStartOf="@id/edtLength"
+        app:layout_constraintTop_toBottomOf="@id/edtLength" />
+
+    <EditText
+        android:id="@+id/edtHeight"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint"
+        android:inputType="numberDecimal"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="@id/tvHeight"
+        app:layout_constraintStart_toStartOf="@id/tvHeight"
+        app:layout_constraintTop_toBottomOf="@id/tvHeight" />
+    <TextView
+        android:id="@+id/tvWidth"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:text="@string/width"
+        app:layout_constraintStart_toStartOf="@id/edtHeight"
+        app:layout_constraintEnd_toEndOf="@id/edtHeight"
+        app:layout_constraintTop_toBottomOf="@id/edtHeight"/>
+
+    <EditText
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:hint="@string/hint"
+        android:id="@+id/edtWidth"
+        app:layout_constraintStart_toStartOf="@id/tvWidth"
+        app:layout_constraintEnd_toEndOf="@id/tvWidth"
+        app:layout_constraintTop_toBottomOf="@id/tvWidth"
+        android:inputType="numberDecimal"/>
+
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/calculate"
+        app:layout_constraintEnd_toEndOf="@+id/edtWidth"
+        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintStart_toStartOf="@+id/edtWidth"
+        app:layout_constraintTop_toBottomOf="@+id/edtWidth" />
+
+    <TextView
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvResult"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        android:text="@string/result"
+        app:layout_constraintStart_toStartOf="@id/btnCalculate"
+        app:layout_constraintEnd_toEndOf="@id/btnCalculate"
+        app:layout_constraintTop_toBottomOf="@id/btnCalculate"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
