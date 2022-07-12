@@ -1,11 +1,10 @@
 package com.example.myviewmodel
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.example.myviewmodel.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : Base() {
 
     private lateinit var binding: ActivityMainBinding
     private val viewModel : MainViewModel by viewModels()
@@ -15,7 +14,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        displayResult()
+//        displayResult()
+        binding.root.displayResult(viewModel.result.toString())
         binding.btnCalculate.setOnClickListener {
             val width = binding.edtWidth.text.toString()
             val height = binding.edtHeight.text.toString()
@@ -27,14 +27,16 @@ class MainActivity : AppCompatActivity() {
                 length.isEmpty() -> binding.edtLength.error = "Masih kosong"
                 else -> {
                     viewModel.calculate(width, height, length)
-                    displayResult()
+//                    displayResult()
+                    binding.root.displayResult(viewModel.result.toString())
                 }
             }
         }
 
     }
 
-    private fun displayResult() {
+    /*private fun displayResult() {
         binding.tvResult.text = viewModel.result.toString()
-    }
+    }*/
+
 }
